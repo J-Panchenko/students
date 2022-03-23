@@ -1,0 +1,36 @@
+.search-form {
+  width: 500px;
+  position: relative;
+}
+
+.search-input {
+  background-color: #F2F2F2;
+  border: none;
+  padding: 6px 40px 6px 12px;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 20px;
+  color: var(--main-text-color);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--filter-text-color);
+}
+
+.search-input:focus::placeholder {
+  opacity: 0;
+}
+
+.search-button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  background-color: #F2F2F2;
+  border: none;
+  padding: 6px 12px;
+}

@@ -1,0 +1,10 @@
+:root {
+  --header-text-color: #777777;
+  --filter-text-color: #C0C0C0;
+  --title-text-color: #5B5B5B;
+  --main-text-color: #828282;
+  --main-bg-color: #FFFFFF;
+  --arrow-down-mid: url(./images/arrow-down-mid.svg);
+  --arrow-down-light: url(./images/arrow-down-light.svg);
+  --arrow-down-dark: url(./images/arrow-down-dark.svg);
+}

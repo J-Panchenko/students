@@ -1,0 +1,98 @@
+.header {
+  text-transform: uppercase;
+  color: var(--header-text-color);
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 0;
+}
+
+.school-info {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 63px;
+}
+
+.school-info::after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background-image: var(--arrow-down-mid);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.school-info__logo {
+  display: block;
+  visibility: hidden;
+}
+
+.school-info__select {
+  cursor: pointer;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-transform: inherit;
+  color: inherit;
+  padding: 6px 40px 6px 12px;
+}
+
+.school-info__select:focus {
+  outline: none;
+}
+
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 640px;
+}
+
+.menu__item {
+  margin-right: 16px;
+}
+
+.menu__item:last-of-type {
+  margin-right: 0;
+}
+
+.menu__link {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  background-color: #A6192E;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.user {
+  margin-left: auto;
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__menu {
+  background-image: var(--arrow-down-mid);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}

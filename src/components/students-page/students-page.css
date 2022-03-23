@@ -1,0 +1,44 @@
+.students-page__headline {
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--title-text-color);
+  font-size: 20px;
+  line-height: 23.7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4px 0;
+}
+
+.export-button {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-color: var(--main-bg-color);
+  margin-right: 130px;
+}
+
+.export-button__text {
+  font-size: 12px;
+  line-height: 16.8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--filter-text-color);
+  padding: 5px;
+  padding-left: 22px;
+}
+
+.export-button::before {
+  content: '';
+  position: absolute;
+  background-image: url(../../images/export.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+}
