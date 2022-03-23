@@ -1,3 +1,7 @@
+.students-page {
+  margin-bottom: 50px;
+}
+
 .students-page__headline {
   margin: 8px 0;
   display: flex;

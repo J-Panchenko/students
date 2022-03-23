@@ -22,6 +22,18 @@ function StudentsPage({ service }) {
     getData();
   }, [page, size]);
 
+  const numberOfstudents = totalPage * size;
+  const currentSizeEnd = page * size;
+  const currentSizeStart = currentSizeEnd - (size - 1);
+
+  const onPageChange = (value) => {
+    const expectedPage = page + value;
+    if (expectedPage !== 0 && expectedPage <= totalPage) {
+      setPage(expectedPage);
+    }
+    return null;
+  };
+
   return (
     <section className="students-page">
       <Filter />
@@ -34,7 +46,14 @@ function StudentsPage({ service }) {
           </button>
         </div>
         <Table students={students} />
-        <Pagination totalPage={totalPage} size={size} onSizeChange={setSize} />
+        <Pagination
+          numberOfstudents={numberOfstudents}
+          currentSizeStart={currentSizeStart}
+          currentSizeEnd={currentSizeEnd}
+          onPageChange={onPageChange}
+          size={size}
+          onSizeChange={setSize}
+        />
       </div>
     </section>
   );
