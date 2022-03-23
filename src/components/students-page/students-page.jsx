@@ -34,7 +34,7 @@ function StudentsPage({ service }) {
           </button>
         </div>
         <Table students={students} />
-        <Pagination totalPage={totalPage} size={size} />
+        <Pagination totalPage={totalPage} size={size} onSizeChange={setSize} />
       </div>
     </section>
   );
