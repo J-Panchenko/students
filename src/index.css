@@ -17,7 +17,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 19.6px;
-  color: var(--main-text-color);
+  color: var(--gray-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -11,7 +11,7 @@
   font-family: inherit;
   font-size: inherit;
   line-height: 20px;
-  color: var(--main-text-color);
+  color: var(--gray-main);
 }
 
 .search-input:focus {
@@ -19,7 +19,7 @@
 }
 
 .search-input::placeholder {
-  color: var(--filter-text-color);
+  color: var(--gray-new);
 }
 
 .search-input:focus::placeholder {

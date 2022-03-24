@@ -1,0 +1,41 @@
+.table-row {
+  background-color: var(--main-bg-color);
+  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+}
+
+.table-row--checked {
+  background-color: var(--gray-bg-color);
+  border: 1px solid var(--gray-new);
+}
+
+.table-row:nth-child(4n-1) {
+  background-color: #F9F9F9;
+}
+
+.table-data {
+  height: 48px;
+}
+
+.actions__info {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+}
+
+.drop-down-btn {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop-down-btn__arrow--reverse {
+  transform: rotate(180deg);
+}
+
+.drop-down-btn__arrow--reverse path {
+  fill: var(--gray-dark);
+}

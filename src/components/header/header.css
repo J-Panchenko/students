@@ -1,6 +1,6 @@
 .header {
   text-transform: uppercase;
-  color: var(--header-text-color);
+  color: var(--gray-mid);
 }
 
 .header__inner {

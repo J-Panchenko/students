@@ -1,6 +1,6 @@
 .filter {
   background-color: #5B5B5B;
-  color: var(--filter-text-color);
+  color: var(--gray-new);
   text-transform: uppercase;
 }
 
@@ -54,7 +54,7 @@
   height: 13px;
   top: 9px;
   left: 10px;
-  background-color: var(--filter-text-color);
+  background-color: var(--gray-new);
 }
 
 .filter__text--clear::before {

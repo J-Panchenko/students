@@ -10,7 +10,7 @@
 }
 
 .title {
-  color: var(--title-text-color);
+  color: var(--gray-dark);
   font-size: 20px;
   line-height: 23.7px;
   font-weight: 700;
@@ -32,7 +32,7 @@
   line-height: 16.8px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--filter-text-color);
+  color: var(--gray-new);
   padding: 5px;
   padding-left: 22px;
 }

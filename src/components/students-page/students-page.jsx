@@ -3,7 +3,7 @@ import Filter from '../filter';
 import withService from '../hoc';
 import Pagination from '../pagination';
 import SearchPanel from '../search-panel';
-import Table from '../table';
+import StudentsList from '../students-list';
 import './students-page.css';
 
 function StudentsPage({ service }) {
@@ -45,7 +45,7 @@ function StudentsPage({ service }) {
             <span className="export-button__text">Export CSV</span>
           </button>
         </div>
-        <Table students={students} />
+        <StudentsList students={students} />
         <Pagination
           numberOfstudents={numberOfstudents}
           currentSizeStart={currentSizeStart}

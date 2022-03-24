@@ -1,5 +1,5 @@
 .pagination {
-  color: var(--title-text-color);
+  color: var(--gray-dark);
   max-width: 360px;
   margin: 0 auto;
   display: flex;
@@ -32,7 +32,7 @@
   position: absolute;
   width: 10px;
   height: 5px;
-  background-color: var(--title-text-color);
+  background-color: var(--gray-dark);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   grid-area: select;
   justify-self: end;
