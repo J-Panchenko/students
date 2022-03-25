@@ -1,0 +1,3 @@
+.test-row:last-of-type .test-data {
+  border-bottom: 2px solid var(--red-border);
+}

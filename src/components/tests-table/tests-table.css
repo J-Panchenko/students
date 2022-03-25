@@ -1,0 +1,9 @@
+.tests-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tests-table__inner {
+  max-width: 1080px;
+  padding: 1px;
+}

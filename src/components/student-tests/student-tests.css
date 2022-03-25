@@ -1,0 +1,142 @@
+.student-tests {
+  background-color: var(--gray-bg-color);
+}
+
+.student-tests__inner {
+  margin: 20px 60px;
+}
+
+.student-tests-info {
+  max-width: 1102px;
+  color: var(--gray-dark);
+}
+
+.student-tests-info__header {
+  border-bottom: 1px solid var(--red-border);
+  text-transform: uppercase;
+}
+
+.student-data {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12.5px;
+}
+
+.student-data__item {
+  margin: 0 15px 0 0;
+}
+
+.student-data__description {
+  color: var(--gray-mid);
+}
+
+.student-data__value {
+  font-weight: 700;
+}
+
+.filters-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px; 
+  margin: 0;
+  margin-bottom: 12.5px;
+  padding: 0;
+  list-style: none;
+}
+
+.filters-list__item {
+  position: relative;
+}
+
+.filters-list__item:first-child::after,
+.filters-list__item:nth-child(2)::after,
+.filters-list__item:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  width: 9px;
+  height: 5px;
+  cursor: pointer;
+  background-image: url(../../images/arrow-down-dark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.param-selection {
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--gray-new);
+  padding: 6px 36px 6px 12px;
+}
+
+.period-selection__inner {
+  width: 200px;
+  padding: 7px 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-new);
+}
+
+.period-selection__name {
+  color: var(--gray-new);
+}
+
+.period-selection__label {
+  display: inline-block;
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.period-selection__icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/calendar.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.period-selection__option {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.period-selection__option::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.filters-list__item:last-child {
+  margin: auto;
+}
+
+.update-list-btn {
+  display: block;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
