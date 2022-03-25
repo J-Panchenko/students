@@ -6,6 +6,10 @@
   --main-bg-color: #FFFFFF;
   --gray-bg-color: #F2F2F2;
   --red-border: #A6192E;
+  --value-blue: #4285F4;
+  --value-green: #0F9D58;
+  --value-yellow: #E2B534;
+  --value-red: #DB4437;
   --arrow-down-mid: url(./images/arrow-down-mid.svg);
   --arrow-down-light: url(./images/arrow-down-light.svg);
   --arrow-down-dark: url(./images/arrow-down-dark.svg);

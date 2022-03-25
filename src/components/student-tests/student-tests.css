@@ -14,6 +14,7 @@
 .student-tests-info__header {
   border-bottom: 1px solid var(--red-border);
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .student-data {
@@ -139,4 +140,66 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+
+.tests-description {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16.8px;
+  margin-bottom: 13px;
+}
+
+.description-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.description-field__name {
+  margin: 0;
+  margin-right: 22px;
+  padding: 1px;
+}
+
+.description-field__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.description-field__value {
+  padding: 1px;
+  padding-left: 20px;
+  margin-right: 22px;
+  position: relative;
+}
+
+.description-field__value::before {
+  content: '';
+  position: absolute;
+  top: 3.4px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--gray-mid);
+}
+
+.description-field__value:first-child:before {
+  background-color: var(--value-blue);
+}
+
+.description-field__value:nth-child(2):before {
+  background-color: var(--value-green);
+}
+
+.description-field__value:nth-child(3):before {
+  background-color: var(--value-yellow);
+}
+
+.description-field__value:last-child:before {
+  background-color: var(--value-red);
 }

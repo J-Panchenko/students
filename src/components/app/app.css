@@ -13,3 +13,19 @@
   width: 1px;
   overflow: hidden;
 }
+
+.value--blue {
+  color: var(--value-blue);
+}
+
+.value--green {
+  color: var(--value-green);
+}
+
+.value--yellow {
+ color: var(--value-yellow);
+}
+
+.value--red {
+  color: var(--value-red);
+}

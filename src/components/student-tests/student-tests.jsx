@@ -63,18 +63,18 @@ function StudentTests({
               <div className="description-field">
                 <p className="description-field__name">Score</p>
                 <ul className="description-field__list">
-                  <li className="description-field__value">90%+ accuracy</li>
-                  <li className="description-field__value">80 - 89% accuracy</li>
-                  <li className="description-field__value">50 - 79% accuracy</li>
-                  <li className="description-field__value">below 50% accuracy</li>
+                  <li className="description-field__value value--blue">90%+ accuracy</li>
+                  <li className="description-field__value value--green">80 - 89% accuracy</li>
+                  <li className="description-field__value value--yellow">50 - 79% accuracy</li>
+                  <li className="description-field__value value--red">below 50% accuracy</li>
                 </ul>
               </div>
               <div className="description-field">
                 <p className="description-field__name">Speed</p>
                 <ul className="description-field__list">
-                  <li className="description-field__value">above expected</li>
-                  <li className="description-field__value">as expected</li>
-                  <li className="description-field__value">below expected</li>
+                  <li className="description-field__value value--blue">above expected</li>
+                  <li className="description-field__value value--green">as expected</li>
+                  <li className="description-field__value value--red">below expected</li>
                 </ul>
               </div>
             </div>
