@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './students-list.css';
 import uuid from 'react-uuid';
-import alphabet from '../../images/alphabetical-sorting.svg';
-import sort from '../../images/sort.svg';
+import { ReactComponent as AlphabetSort } from '../../images/alphabetical-sorting.svg';
+import { ReactComponent as ValueSort } from '../../images/sort.svg';
 import StudentInfoItem from '../student-info-item';
-import withService from '../hoc';
 
-function StudentsList({ students }) {
+function StudentsList({
+  students, setSortBy, sortDir, setSortDir,
+}) {
   const [checkedAll, setCheckedAll] = useState(false);
+  const valueDir = (sortDir === -1) ? 1 : -1;
 
   return (
     <table className="table">
@@ -26,31 +28,55 @@ function StudentsList({ students }) {
             </label>
           </th>
           <th className="thead-col thead-col__name">
-            <span className="thead-col__text">Name</span>
-            <button className="thead-col__filter" type="button">
-              <img className="thead-col__filter-img" src={alphabet} alt="name-sorting" />
-            </button>
+            <div className="thead-col__inner">
+              <span className="thead-col__text">Name</span>
+              <button
+                className="thead-col__filter"
+                type="button"
+                onClick={() => [setSortBy('name'), setSortDir(valueDir)]}
+              >
+                <AlphabetSort className="thead-col__filter-img" />
+              </button>
+            </div>
           </th>
           <th className="thead-col thead-col__id">
-            <span className="thead-col__text">Id</span>
-            <button className="thead-col__filter" type="button">
-              <img className="thead-col__filter-img" src={sort} alt="id-sorting" />
-            </button>
+            <span className="thead-col__text">ID</span>
           </th>
           <th className="thead-col thead-col__class">
-            <span className="thead-col__text">Class</span>
+            <div className="thead-col__inner">
+              <span className="thead-col__text">Class</span>
+              <button
+                className="thead-col__filter"
+                type="button"
+                onClick={() => [setSortBy('class'), setSortDir(valueDir)]}
+              >
+                <ValueSort className="thead-col__filter-img" />
+              </button>
+            </div>
           </th>
           <th className="thead-col thead-col__score">
-            <span className="thead-col__text">Av. Score, %</span>
-            <button className="thead-col__filter" type="button">
-              <img className="thead-col__filter-img" src={sort} alt="id-sorting" />
-            </button>
+            <div className="thead-col__inner">
+              <span className="thead-col__text">Av. Score, %</span>
+              <button
+                className="thead-col__filter"
+                type="button"
+                onClick={() => [setSortBy('score'), setSortDir(valueDir)]}
+              >
+                <ValueSort className="thead-col__filter-img" />
+              </button>
+            </div>
           </th>
           <th className="thead-col thead-col__speed">
-            <span className="thead-col__text">Av. Speed</span>
-            <button className="thead-col__filter" type="button">
-              <img className="thead-col__filter-img" src={sort} alt="id-sorting" />
-            </button>
+            <div className="thead-col__inner">
+              <span className="thead-col__text">Av. Speed</span>
+              <button
+                className="thead-col__filter"
+                type="button"
+                onClick={() => [setSortBy('speed'), setSortDir(valueDir)]}
+              >
+                <ValueSort className="thead-col__filter-img" />
+              </button>
+            </div>
           </th>
           <th className="thead-col thead-col__parents">
             <span className="thead-col__text">Parents</span>
@@ -73,4 +99,4 @@ function StudentsList({ students }) {
   );
 }
 
-export default withService(StudentsList);
+export default StudentsList;

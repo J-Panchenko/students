@@ -1,17 +1,19 @@
 import React from 'react';
 import './search-panel.css';
-import search from '../../images/search.svg';
+import searchImg from '../../images/search.svg';
 
-function SearchPanel() {
+function SearchPanel({ search, setSearch }) {
   return (
-    <form className="search-form">
+    <form className="search-form" onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
         className="search-input"
         placeholder="Enter Student Name, Parent or ID here"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <button className="search-button" type="submit">
-        <img className="search-icon" src={search} width="16" height="16.5" alt="search button" />
+        <img className="search-icon" src={searchImg} width="16" height="16.5" alt="search button" />
       </button>
     </form>
   );
