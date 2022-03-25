@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import StudentTests from '../student-tests';
 import { ReactComponent as DropDownArrow } from '../../images/arrow-down-light.svg';
+import { ReactComponent as InfoButton } from '../../images/info.svg';
 import './student-info-item.css';
 
 function StudentInfoItem({
-  name, id, group, score, speed, parents, tests, checkedAll,
+  name, id, class: group, score, speed, parents, tests, checkedAll,
 }) {
   const [showInfo, setShowInfo] = useState(false);
   const [checkedStudent, setCheckedStudent] = useState(checkedAll);
@@ -55,8 +56,9 @@ function StudentInfoItem({
           </span>
         </td>
         <td className="table-data table-data__parents">
-          <span className="table-data__value table-data__value-perents">
-            {parents}
+          <InfoButton className="table-data__value table-data__perents-info" />
+          <span className="table-data__value table-data__perents-name">
+            {parents.join(', ')}
           </span>
         </td>
         <td className="table-data table-data__actions">

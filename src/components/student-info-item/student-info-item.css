@@ -8,12 +8,16 @@
   border: 1px solid var(--gray-new);
 }
 
+.table-row--checked .table-data {
+  margin-top: -1px;
+}
+
 .table-row:nth-child(4n-1) {
   background-color: #F9F9F9;
 }
 
 .table-data {
-  height: 48px;
+  min-height: 48px;
 }
 
 .actions__info {
@@ -38,4 +42,23 @@
 
 .drop-down-btn__arrow--reverse path {
   fill: var(--gray-dark);
+}
+
+.table-data__class {
+  padding-left: 5px;
+}
+
+.table-data__parents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.table-data__perents-info {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
 }
