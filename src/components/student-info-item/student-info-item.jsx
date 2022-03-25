@@ -69,7 +69,7 @@ function StudentInfoItem({
           </span>
         </td>
       </tr>
-      <tr className="table-row table-row-info" key="student-tests-info">
+      <tr className="table-row" key="student-tests-info">
         {(showInfo) ? <StudentTests name={name} id={id} tests={tests} /> : null}
       </tr>
     </>

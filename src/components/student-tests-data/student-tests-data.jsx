@@ -3,26 +3,66 @@ import './student-tests-data.css';
 
 function StudentTastsData(tests) {
   const {
-    label, score, speed, total, expSpeed, concept, data, absent, abcent,
+    label, score, speed, total, expSpeed, concept, date, absent, abcent, numberList,
   } = tests;
-  const beAway = (absent === undefined) ? abcent : absent;
+
   return (
-    <li>
-      <div className="test-row">
-        <span className="test-data">
+    <tr className="test-row">
+      <td className="test-data">
+        <span className="test-data__value">
+          {numberList}
+          .
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
           Finding
           {' '}
           {label}
         </span>
-        <span className="test-data">{score}</span>
-        <span className="test-data">{speed}</span>
-        <span className="test-data">{total}</span>
-        <span className="test-data">{expSpeed}</span>
-        <span className="test-data">{concept}</span>
-        <span className="test-data">{data}</span>
-        <span className="test-data">{beAway}</span>
-      </div>
-    </li>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {(!score) ? 'NIL' : score}
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {(!speed) ? 'NIL' : speed}
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {total}
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {expSpeed}
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {concept}
+        </span>
+      </td>
+      <td className="test-data">
+        <span className="test-data__value">
+          {date}
+        </span>
+      </td>
+      <td className="test-data">
+        <label className="label" htmlFor="selectAll">
+          <input
+            className="checkbox checkbox-all"
+            type="checkbox"
+            id="selectAll"
+            checked={absent || abcent}
+            disabled
+          />
+        </label>
+      </td>
+    </tr>
   );
 }
 
