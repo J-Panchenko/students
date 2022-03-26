@@ -1,3 +1,25 @@
-.test-row:last-of-type .test-data {
-  border-bottom: 2px solid var(--red-border);
+.test-data {
+  padding: 4px 0;
+}
+
+.test-data__label {
+  padding-left: 8px;
+}
+
+.test-row--red .test-data {
+  background-color: var(--red-bg-color);
+  border-top: 1px solid var(--red-border);
+  border-bottom: 1px solid var(--red-border);
+}
+
+.test-row--red .test-data:first-child {
+  border-left: 1px solid var(--red-border);
+}
+
+.test-row--red .test-data:last-child {
+  border-right: 1px solid var(--red-border);
+}
+
+.test-data__value--blue {
+  color: var(--value-blue);
 }

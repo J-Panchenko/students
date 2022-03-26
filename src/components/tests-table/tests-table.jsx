@@ -9,7 +9,7 @@ function TestsTable({ tests }) {
     <table className="tests-table">
       <thead className="tests-table-head">
         <th className="tests-table-col tests-table-col__number">
-          <span className="tests-table-col__name">#</span>
+          <span className="tests-table-col__hash">#</span>
         </th>
         <th className="tests-table-col tests-table-col__label">
           <span className="tests-table-col__name">Test Label</span>
@@ -48,10 +48,16 @@ function TestsTable({ tests }) {
         })}
       </tbody>
       <tfoot className="tests-table-foot">
-        <tr className="tests-result">
-          <th className="tests-result__name" colSpan={2}>Average</th>
-          <td className="tests-result__score">96%</td>
-          <td className="tests-result__speed">Above expected</td>
+        <tr className="tests-result-row">
+          <td className="tests-result-data" colSpan={2}>
+            <span className="tests-result__name">Average</span>
+          </td>
+          <td className="tests-result-data">
+            <span className="tests-result__score value--blue">96%</span>
+          </td>
+          <td className="tests-result-data" colSpan={6}>
+            <span className="tests-result__speed value--blue">Above expected</span>
+          </td>
         </tr>
       </tfoot>
     </table>

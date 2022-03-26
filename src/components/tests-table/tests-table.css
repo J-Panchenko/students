@@ -1,9 +1,76 @@
 .tests-table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 7px;
   width: 100%;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--gray-mid);
 }
 
 .tests-table__inner {
   max-width: 1080px;
   padding: 1px;
+}
+
+.tests-table-col {
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 9px;
+}
+
+.tests-table-col__name {
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.tests-table-col__number {
+  width: 3.1%;
+}
+
+.tests-table-col__score {
+  width: 6%;
+}
+
+.tests-table-col__total {
+  width: 7.5%;
+}
+
+.tests-table-col__speed,
+.tests-table-col__exp-speed,
+.tests-table-col__date {
+  width: 11.7%;
+}
+
+.tests-table-col__concept {
+  width: 15%;
+}
+
+.tests-table-col__absent {
+  width: 4.5%;
+}
+
+.tests-result-row {
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tests-result-row:first-child .tests-result-data {
+  border-top: 2px solid var(--red-border);
+}
+
+.tests-result-data {
+  padding-top: 6px;
+}
+
+.tests-result__name {
+  display: block;
+  padding: 14px 42px;
+}
+
+.tests-result__speed {
+  display: block;
+  max-width: 150px;
+  padding: 4px 30px;
 }

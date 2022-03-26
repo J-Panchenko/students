@@ -7,14 +7,14 @@ function StudentTastsData(tests) {
   } = tests;
 
   return (
-    <tr className="test-row">
+    <tr className={(!score || !speed) ? 'test-row test-row--red' : 'test-row'}>
       <td className="test-data">
         <span className="test-data__value">
           {numberList}
           .
         </span>
       </td>
-      <td className="test-data">
+      <td className="test-data test-data__label">
         <span className="test-data__value">
           Finding
           {' '}
@@ -22,7 +22,7 @@ function StudentTastsData(tests) {
         </span>
       </td>
       <td className="test-data">
-        <span className="test-data__value">
+        <span className={(score > 90) ? 'test-data__value--blue' : 'test-data__value'}>
           {(!score) ? 'NIL' : score}
         </span>
       </td>
