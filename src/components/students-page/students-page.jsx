@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { CSVLink } from 'react-csv';
 import Filter from '../filter';
 import withService from '../hoc';
 import Pagination from '../pagination';
@@ -37,6 +38,17 @@ function StudentsPage({ service }) {
     return null;
   };
 
+  const fileCSV = students.map((student) => ({
+    name: student.name,
+    id: student.id,
+    class: student.class,
+    score: student.score,
+    speed: student.speed,
+    parents: student.parents,
+    tests: student.tests
+      .map((test) => `Finding ${test.label}: score-${test.score}/speed-${test.speed}`),
+  }));
+
   return (
     <section className="students-page">
       <Filter />
@@ -47,9 +59,13 @@ function StudentsPage({ service }) {
             search={search}
             setSearch={setSearch}
           />
-          <button className="export-button" type="button">
+          <CSVLink
+            className="export-button"
+            data={fileCSV}
+            filename="students-data.csv"
+          >
             <span className="export-button__text">Export CSV</span>
-          </button>
+          </CSVLink>
         </div>
         <StudentsList
           students={students}

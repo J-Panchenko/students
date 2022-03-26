@@ -20,10 +20,8 @@
 }
 
 .export-button {
-  position: relative;
-  cursor: pointer;
-  border: none;
-  background-color: var(--main-bg-color);
+  text-decoration: none;
+  align-self: center;
   margin-right: 130px;
 }
 
@@ -35,14 +33,18 @@
   color: var(--gray-new);
   padding: 5px;
   padding-left: 22px;
+  position: relative;
 }
 
-.export-button::before {
+.export-button__text::before {
   content: '';
   position: absolute;
+  left: 3px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
   background-image: url(../../images/export.svg);
   background-repeat: no-repeat;
   background-position: center;
-  width: 16px;
-  height: 16px;
+
 }
