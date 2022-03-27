@@ -135,11 +135,12 @@
 }
 
 .update-list-btn {
+  cursor: pointer;
   display: block;
   padding: 8px;
+  margin-right: 75px;
   width: 32px;
   height: 32px;
-  cursor: pointer;
 }
 
 .tests-description {
