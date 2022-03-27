@@ -50,7 +50,7 @@
 .filter__text--clear::after {
   content: '';
   position: absolute;
-  width: 2px;
+  width: 1px;
   height: 13px;
   top: 9px;
   left: 10px;
