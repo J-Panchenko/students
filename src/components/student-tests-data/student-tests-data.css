@@ -19,7 +19,3 @@
 .test-row--red .test-data:last-child {
   border-right: 1px solid var(--red-border);
 }
-
-.test-data__value--blue {
-  color: var(--value-blue);
-}

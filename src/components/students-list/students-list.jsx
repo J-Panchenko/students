@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import './students-list.css';
+import React from 'react';
 import uuid from 'react-uuid';
+import { useSelect } from '../../hooks';
 import { ReactComponent as AlphabetSort } from '../../images/alphabetical-sorting.svg';
 import { ReactComponent as ValueSort } from '../../images/sort.svg';
 import StudentInfoItem from '../student-info-item';
+import './students-list.css';
 
-function StudentsList({
-  students, setSortBy, sortDir, setSortDir,
-}) {
-  const [checkedAll, setCheckedAll] = useState(false);
-  const valueDir = (sortDir === -1) ? 1 : -1;
-
+function StudentsList({ students, onSort }) {
+  const { selectAll, setSelectAll } = useSelect(false);
   return (
     <table className="table">
       <thead className="table-head">
@@ -21,8 +18,8 @@ function StudentsList({
                 className="checkbox checkbox-all"
                 type="checkbox"
                 id="selectAll"
-                checked={checkedAll}
-                onChange={() => setCheckedAll(!checkedAll)}
+                checked={selectAll}
+                onChange={() => setSelectAll(!selectAll)}
               />
               <span className="thead-col__text visually-hidden">Select All</span>
             </label>
@@ -33,7 +30,7 @@ function StudentsList({
               <button
                 className="thead-col__filter"
                 type="button"
-                onClick={() => [setSortBy('name'), setSortDir(valueDir)]}
+                onClick={() => onSort('name')}
               >
                 <AlphabetSort className="thead-col__filter-img" />
               </button>
@@ -48,7 +45,7 @@ function StudentsList({
               <button
                 className="thead-col__filter"
                 type="button"
-                onClick={() => [setSortBy('class'), setSortDir(valueDir)]}
+                onClick={() => onSort('class')}
               >
                 <ValueSort className="thead-col__filter-img" />
               </button>
@@ -60,7 +57,7 @@ function StudentsList({
               <button
                 className="thead-col__filter"
                 type="button"
-                onClick={() => [setSortBy('score'), setSortDir(valueDir)]}
+                onClick={() => onSort('score')}
               >
                 <ValueSort className="thead-col__filter-img" />
               </button>
@@ -72,7 +69,7 @@ function StudentsList({
               <button
                 className="thead-col__filter"
                 type="button"
-                onClick={() => [setSortBy('speed'), setSortDir(valueDir)]}
+                onClick={() => onSort('speed')}
               >
                 <ValueSort className="thead-col__filter-img" />
               </button>
@@ -90,7 +87,7 @@ function StudentsList({
         {students.map((student) => (
           <StudentInfoItem
             key={uuid()}
-            checkedAll={checkedAll}
+            selectAll={selectAll}
             {...student}
           />
         ))}

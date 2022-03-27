@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-import uuid from 'react-uuid';
+import React from 'react';
+import { useSelect, useShowInfo } from '../../hooks';
 import StudentTests from '../student-tests';
 import { ReactComponent as DropDownArrow } from '../../images/arrow-down-light.svg';
 import { ReactComponent as InfoButton } from '../../images/info.svg';
 import './student-info-item.css';
+import { getScoreClassName, getSpeedClassName } from '../../models';
 
 function StudentInfoItem({
-  name, id, class: group, score, speed, parents, tests, checkedAll,
+  name, id, class: group, score, speed, parents, tests, selectAll,
 }) {
-  const [showInfo, setShowInfo] = useState(false);
-  const [checkedStudent, setCheckedStudent] = useState(checkedAll);
-
-  const checked = (checkedStudent) ? 'table-row--checked' : 'table-row';
-  const arrowChange = (showInfo) ? 'drop-down-btn__arrow--reverse' : 'drop-down-btn__arrow';
-  const inputId = uuid();
+  const { showInfo, setShowInfo, arrowShowClassName } = useShowInfo(false);
+  const { select, setSelect, selectedClassName } = useSelect(selectAll);
+  const scoreColor = getScoreClassName(score);
+  const speedColor = getSpeedClassName(speed);
 
   return (
     <>
-      <tr className={checked} key="student-info">
+      <tr className={selectedClassName} key="student-info">
         <td className="table-data table-data__checkbox">
-          <label className="label" htmlFor={inputId}>
+          <label className="label" htmlFor="check-student">
             <input
               className="checkbox"
               type="checkbox"
-              id={inputId}
-              checked={checkedStudent}
-              onChange={() => setCheckedStudent(!checkedStudent)}
+              id="check-student"
+              checked={select}
+              onChange={() => setSelect(!select)}
             />
             <span className="thead-col__text visually-hidden">select</span>
           </label>
@@ -46,12 +45,12 @@ function StudentInfoItem({
           </span>
         </td>
         <td className="table-data table-data__score">
-          <span className="table-data__value">
+          <span className={`table-data__value ${scoreColor}`}>
             {score}
           </span>
         </td>
         <td className="table-data table-data__speed">
-          <span className="table-data__value">
+          <span className={`table-data__value ${speedColor}`}>
             {speed}
           </span>
         </td>
@@ -63,8 +62,12 @@ function StudentInfoItem({
         </td>
         <td className="table-data table-data__actions">
           <span className="table-data__value actions">
-            <button className="actions__info drop-down-btn" type="button" onClick={() => setShowInfo(!showInfo)}>
-              <DropDownArrow className={arrowChange} />
+            <button
+              className="actions__info drop-down-btn"
+              type="button"
+              onClick={() => setShowInfo(!showInfo)}
+            >
+              <DropDownArrow className={arrowShowClassName} />
             </button>
           </span>
         </td>

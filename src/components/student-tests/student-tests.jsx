@@ -3,9 +3,7 @@ import { ReactComponent as UpdateButton } from '../../images/update.svg';
 import TestsTable from '../tests-table';
 import './student-tests.css';
 
-function StudentTests({
-  name, id, tests,
-}) {
+function StudentTests({ name, id, tests }) {
   return (
     <td className="student-tests" colSpan={8}>
       <div className="student-tests__inner">

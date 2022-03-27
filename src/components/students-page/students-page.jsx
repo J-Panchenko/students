@@ -1,53 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { CSVLink } from 'react-csv';
 import Filter from '../filter';
-import withService from '../hoc';
+import withService from '../../hoc';
 import Pagination from '../pagination';
 import SearchPanel from '../search-panel';
 import StudentsList from '../students-list';
 import './students-page.css';
+import { getFileCSV } from '../../models';
+import { useData, useSearch, useSort } from '../../hooks';
 
 function StudentsPage({ service }) {
-  const [size, setSize] = useState(10);
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
-  const [sortBy, setSortBy] = useState('');
-  const [sortDir, setSortDir] = useState('');
-  const [students, setStudents] = useState([]);
-  const [totalPage, setTotalPage] = useState(0);
-  const { getResource } = service;
-
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getResource(page, size, search, sortBy, sortDir);
-      setStudents(result.data);
-      setTotalPage(result.totalPages);
-    };
-    getData();
-  }, [page, size, search, sortBy, sortDir]);
-
-  const numberOfstudents = totalPage * size;
-  const currentSizeEnd = page * size;
-  const currentSizeStart = currentSizeEnd - (size - 1);
-
-  const onPageChange = (value) => {
-    const expectedPage = page + value;
-    if (expectedPage !== 0 && expectedPage <= totalPage) {
-      setPage(expectedPage);
-    }
-    return null;
-  };
-
-  const fileCSV = students.map((student) => ({
-    name: student.name,
-    id: student.id,
-    class: student.class,
-    score: student.score,
-    speed: student.speed,
-    parents: student.parents,
-    tests: student.tests
-      .map((test) => `Finding ${test.label}: score-${test.score}/speed-${test.speed}`),
-  }));
+  const { getStudentsList, getSortList } = service;
+  const {
+    students, setStudents, totalPages, setTotalPages, size, setSize, page, onPageChange,
+  } = useData(getStudentsList);
+  const {
+    search, setSearch,
+  } = useSearch({ ...useData(getStudentsList), getSortList });
+  const { onSort } = useSort(size, page, setStudents, setTotalPages, search, getSortList);
+  const fileCSV = getFileCSV(students);
 
   return (
     <section className="students-page">
@@ -62,24 +33,21 @@ function StudentsPage({ service }) {
           <CSVLink
             className="export-button"
             data={fileCSV}
-            filename="students-data.csv"
+            filename="students-list.csv"
           >
             <span className="export-button__text">Export CSV</span>
           </CSVLink>
         </div>
         <StudentsList
           students={students}
-          setSortBy={setSortBy}
-          sortDir={sortDir}
-          setSortDir={setSortDir}
+          onSort={onSort}
         />
         <Pagination
-          numberOfstudents={numberOfstudents}
-          currentSizeStart={currentSizeStart}
-          currentSizeEnd={currentSizeEnd}
-          onPageChange={onPageChange}
+          page={page}
           size={size}
+          totalPages={totalPages}
           onSizeChange={setSize}
+          onPageChange={onPageChange}
         />
       </div>
     </section>

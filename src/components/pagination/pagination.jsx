@@ -1,14 +1,17 @@
 import React from 'react';
 import './pagination.css';
 import { ReactComponent as Arrow } from '../../images/arrow.svg';
+import pagesControl from '../../constants';
+import { getCurrentSizeList } from '../../models';
 
 function Pagination({
-  currentSizeStart, currentSizeEnd, numberOfstudents, size, onSizeChange, onPageChange,
+  page, size, totalPages, onSizeChange, onPageChange,
 }) {
-  const pagesControl = {
-    back: -1,
-    forth: 1,
-  };
+  const {
+    numberOfstudents,
+    currentSizeOfPageStart,
+    currentSizeOfPageEnd,
+  } = getCurrentSizeList(page, totalPages, size);
 
   return (
     <div className="pagination">
@@ -28,9 +31,9 @@ function Pagination({
         </div>
       </div>
       <p className="pagination-current">
-        {currentSizeStart}
+        {currentSizeOfPageStart}
         -
-        {currentSizeEnd}
+        {currentSizeOfPageEnd}
         {' '}
         of
         {' '}

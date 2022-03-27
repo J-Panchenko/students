@@ -1,13 +1,15 @@
 import React from 'react';
 import './student-tests-data.css';
+import { getTestStyle, getScoreClassName } from '../../models';
 
-function StudentTastsData(tests) {
-  const {
-    label, score, speed, total, expSpeed, concept, date, absent, abcent, numberList,
-  } = tests;
+function StudentTastsData({
+  label, score, speed, total, expSpeed, concept, date, absent, abcent, numberList,
+}) {
+  const { valueClassName, levelScore, levelSpeed } = getTestStyle(score, speed);
+  const scoreClassName = getScoreClassName(score);
 
   return (
-    <tr className={(!score || !speed) ? 'test-row test-row--red' : 'test-row'}>
+    <tr className={valueClassName}>
       <td className="test-data">
         <span className="test-data__value">
           {numberList}
@@ -22,13 +24,13 @@ function StudentTastsData(tests) {
         </span>
       </td>
       <td className="test-data">
-        <span className={(score > 90) ? 'test-data__value--blue' : 'test-data__value'}>
-          {(!score) ? 'NIL' : score}
+        <span className={`test-data__value ${scoreClassName}`}>
+          {levelScore}
         </span>
       </td>
       <td className="test-data">
         <span className="test-data__value">
-          {(!speed) ? 'NIL' : speed}
+          {levelSpeed}
         </span>
       </td>
       <td className="test-data">
