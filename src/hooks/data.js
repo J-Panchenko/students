@@ -5,7 +5,8 @@ function useData(getStudentsList) {
   const [totalPages, setTotalPages] = useState(0);
   const [size, setSize] = useState(10);
   const [page, setPage] = useState(1);
-  const [disabledBtn, setDisabledBtn] = useState(true);
+  const [disabledBack, setDisabledBack] = useState(true);
+  const [disabledForth, setDisabledForth] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -18,12 +19,21 @@ function useData(getStudentsList) {
 
   const onPageChange = (value) => {
     const expectedPage = page + value;
-    if (expectedPage !== 0 && expectedPage <= totalPages) {
-      setDisabledBtn(false);
+    if (expectedPage >= 1 && expectedPage <= totalPages) {
       setPage(expectedPage);
+      setDisabledBack(false);
+      setDisabledForth(false);
     }
-    return setDisabledBtn(true);
+    if (expectedPage <= 1) {
+      setDisabledBack(true);
+    }
+    if (expectedPage >= totalPages) {
+      setDisabledForth(true);
+    }
   };
+
+  const disableBackBtn = (disabledBack) ? 'disabled' : '';
+  const disableForthBtn = (disabledForth) ? 'disabled' : '';
 
   return {
     students,
@@ -35,7 +45,8 @@ function useData(getStudentsList) {
     page,
     setPage,
     onPageChange,
-    disabledBtn,
+    disableBackBtn,
+    disableForthBtn,
   };
 }
 

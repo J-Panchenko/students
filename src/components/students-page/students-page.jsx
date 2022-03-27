@@ -12,7 +12,8 @@ import { useData, useSearch, useSort } from '../../hooks';
 function StudentsPage({ service }) {
   const { getStudentsList, getSortList } = service;
   const {
-    students, setStudents, totalPages, setTotalPages, size, setSize, page, onPageChange,
+    students, setStudents, totalPages, setTotalPages, size,
+    setSize, page, onPageChange, disableBackBtn, disableForthBtn,
   } = useData(getStudentsList);
   const {
     search, setSearch,
@@ -48,6 +49,8 @@ function StudentsPage({ service }) {
           totalPages={totalPages}
           onSizeChange={setSize}
           onPageChange={onPageChange}
+          disableBackBtn={disableBackBtn}
+          disableForthBtn={disableForthBtn}
         />
       </div>
     </section>

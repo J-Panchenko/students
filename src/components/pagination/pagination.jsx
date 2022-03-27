@@ -5,7 +5,7 @@ import pagesControl from '../../constants';
 import { getCurrentSizeList } from '../../models';
 
 function Pagination({
-  page, size, totalPages, onSizeChange, onPageChange,
+  page, size, totalPages, onSizeChange, onPageChange, disableBackBtn, disableForthBtn,
 }) {
   const {
     numberOfstudents,
@@ -39,13 +39,13 @@ function Pagination({
         {' '}
         {numberOfstudents}
       </p>
-      <div className="pagination-control">
+      <div className="pagin-control">
         <Arrow
-          className="pagination-control__btn pagination-control__btn--back"
+          className={`pagin-control__btn pagin-control__btn--back ${disableBackBtn}`}
           onClick={() => onPageChange(pagesControl.back)}
         />
         <Arrow
-          className="pagination-control__btn pagination-control__btn--forth"
+          className={`pagin-control__btn pagin-control__btn--forth ${disableForthBtn}`}
           onClick={() => onPageChange(pagesControl.forth)}
         />
       </div>

@@ -52,17 +52,28 @@
   padding: 2px;
 }
 
-.pagination-control {
+.pagin-control {
   width: 72px;
   padding: 2px;
   display: flex;
   justify-content: space-between;
 }
 
-.pagination-control__btn {
+.pagin-control__btn {
+  cursor: pointer;
   margin: 1px;
+  width: 20px;
 }
 
-.pagination-control__btn--back {
+.pagin-control__btn:active path {
+  fill: black;
+}
+
+.pagin-control__btn--back {
   transform: rotate(180deg);
+}
+
+.disabled path,
+.disabled:active path {
+  fill: var(--gray-new);
 }
