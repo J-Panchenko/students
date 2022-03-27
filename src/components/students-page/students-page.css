@@ -46,5 +46,12 @@
   background-image: url(../../images/export.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
 
+.export-button__text:active {
+  color: var(--gray-dark);
+}
+
+.export-button__text:active::before {
+  background-image: url(../../images/export-dark.svg);
 }
