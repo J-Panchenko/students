@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/students/static/css/main.58213cca.css",
-    "main.js": "/students/static/js/main.7f3f5cff.js",
+    "main.css": "/students/static/css/main.f3d9c5f4.css",
+    "main.js": "/students/static/js/main.5b1585e4.js",
+    "static/media/error-indicator.png": "/students/static/media/error-indicator.ef9beef6b45686289700.png",
     "static/media/avatar.svg": "/students/static/media/avatar.25876d09737c575e9923bacf9e7ccbb8.svg",
     "static/media/calendar.svg": "/students/static/media/calendar.014bf22dd43069e2de4e.svg",
     "static/media/update.svg": "/students/static/media/update.4122aeb850128f58effd090c8b3d5aef.svg",
@@ -16,11 +17,11 @@
     "static/media/arrow-down-dark.svg": "/students/static/media/arrow-down-dark.68a68ae6e188f4da5f42.svg",
     "static/media/arrow-down-mid.svg": "/students/static/media/arrow-down-mid.2ff8ee45de0bdaa75103.svg",
     "static/media/arrow-down-light.svg": "/students/static/media/arrow-down-light.afdefcd11acf85bb1b2d4c8108f07dc5.svg",
-    "main.58213cca.css.map": "/students/static/css/main.58213cca.css.map",
-    "main.7f3f5cff.js.map": "/students/static/js/main.7f3f5cff.js.map"
+    "main.f3d9c5f4.css.map": "/students/static/css/main.f3d9c5f4.css.map",
+    "main.5b1585e4.js.map": "/students/static/js/main.5b1585e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.58213cca.css",
-    "static/js/main.7f3f5cff.js"
+    "static/css/main.f3d9c5f4.css",
+    "static/js/main.5b1585e4.js"
   ]
 }
