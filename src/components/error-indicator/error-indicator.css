@@ -1,0 +1,20 @@
+.error-indicator {
+  width: 50%;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  font-size: 1rem;
+  align-items: center;
+  color: var(--value-red);
+}
+
+.error-indicator img {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.error-indicator .boom {
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from '../error-boundary';
 import Header from '../header';
 import StudentsPage from '../students-page';
 import './app.css';
@@ -8,7 +9,9 @@ function App() {
     <div>
       <Header />
       <main>
-        <StudentsPage />
+        <ErrorBoundary>
+          <StudentsPage />
+        </ErrorBoundary>
       </main>
     </div>
   );
