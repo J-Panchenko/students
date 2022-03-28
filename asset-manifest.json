@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/students/static/css/main.a2bd0a9c.css",
-    "main.js": "/students/static/js/main.89287d3a.js",
+    "main.css": "/students/static/css/main.58213cca.css",
+    "main.js": "/students/static/js/main.7f3f5cff.js",
     "static/media/avatar.svg": "/students/static/media/avatar.25876d09737c575e9923bacf9e7ccbb8.svg",
     "static/media/calendar.svg": "/students/static/media/calendar.014bf22dd43069e2de4e.svg",
     "static/media/update.svg": "/students/static/media/update.4122aeb850128f58effd090c8b3d5aef.svg",
@@ -16,11 +16,11 @@
     "static/media/arrow-down-dark.svg": "/students/static/media/arrow-down-dark.68a68ae6e188f4da5f42.svg",
     "static/media/arrow-down-mid.svg": "/students/static/media/arrow-down-mid.2ff8ee45de0bdaa75103.svg",
     "static/media/arrow-down-light.svg": "/students/static/media/arrow-down-light.afdefcd11acf85bb1b2d4c8108f07dc5.svg",
-    "main.a2bd0a9c.css.map": "/students/static/css/main.a2bd0a9c.css.map",
-    "main.89287d3a.js.map": "/students/static/js/main.89287d3a.js.map"
+    "main.58213cca.css.map": "/students/static/css/main.58213cca.css.map",
+    "main.7f3f5cff.js.map": "/students/static/js/main.7f3f5cff.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2bd0a9c.css",
-    "static/js/main.89287d3a.js"
+    "static/css/main.58213cca.css",
+    "static/js/main.7f3f5cff.js"
   ]
 }
