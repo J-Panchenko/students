@@ -13,7 +13,7 @@ function StudentsPage({ service }) {
   const { getStudentsList, getSortList } = service;
   const {
     students, setStudents, totalPages, setTotalPages, size,
-    setSize, page, onPageChange, disableBackBtn, disableForthBtn,
+    setSize, page, onPageChange, loading, disableBackBtn, disableForthBtn,
   } = useData(getStudentsList);
   const {
     search, setSearch,
@@ -41,6 +41,7 @@ function StudentsPage({ service }) {
         </div>
         <StudentsList
           students={students}
+          loading={loading}
           onSort={onSort}
         />
         <Pagination

@@ -4,9 +4,10 @@ import { useSelect } from '../../hooks';
 import { ReactComponent as AlphabetSort } from '../../images/alphabetical-sorting.svg';
 import { ReactComponent as ValueSort } from '../../images/sort.svg';
 import StudentInfoItem from '../student-info-item';
+import Spinner from '../spinner';
 import './students-list.css';
 
-function StudentsList({ students, onSort }) {
+function StudentsList({ students, loading, onSort }) {
   const { selectAll, setSelectAll } = useSelect(false);
   return (
     <table className="table">
@@ -84,7 +85,13 @@ function StudentsList({ students, onSort }) {
         </tr>
       </thead>
       <tbody className="table-body">
-        {students.map((student) => (
+        {loading ? (
+          <tr className="spinner">
+            <td className="spinner__inner" colSpan={8}>
+              <Spinner />
+            </td>
+          </tr>
+        ) : students.map((student) => (
           <StudentInfoItem
             key={uuid()}
             selectAll={selectAll}

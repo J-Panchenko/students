@@ -5,6 +5,7 @@ function useData(getStudentsList) {
   const [totalPages, setTotalPages] = useState(0);
   const [size, setSize] = useState(10);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [disabledBack, setDisabledBack] = useState(true);
   const [disabledForth, setDisabledForth] = useState(false);
 
@@ -13,7 +14,9 @@ function useData(getStudentsList) {
       const result = await getStudentsList(page, size);
       setStudents(result.data);
       setTotalPages(result.totalPages);
+      setLoading(false);
     };
+    setLoading(true);
     getData();
   }, [page, size]);
 
@@ -45,6 +48,7 @@ function useData(getStudentsList) {
     page,
     setPage,
     onPageChange,
+    loading,
     disableBackBtn,
     disableForthBtn,
   };
